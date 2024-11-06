@@ -1,0 +1,26 @@
+.data-table {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-right: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9em;
+  color: #333;
+}
+
+thead {
+  background-color: #f4f7fa;
+  color: #333;
+  font-weight: bold;
+}
+
+td, th {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+}

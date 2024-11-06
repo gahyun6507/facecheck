@@ -1,0 +1,75 @@
+.overview {
+  padding: 20px;
+  background-color: #f4f6f9;
+  overflow-y: hidden; /* 큰 화면에서 스크롤 제거 */
+}
+
+.dashboard-cards2 {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.card2 {
+  flex: 1;
+  background-color: #ffffff;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  max-width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-content2 {
+  margin-top: 10px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.icon2 {
+  font-size: 2em;
+  color: #225ba4;
+  margin-bottom: 10px;
+}
+
+.card-title2 {
+  font-weight: bold;
+  font-size: 1.1em;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.card-names2 {
+  max-height: 80px; /* 스크롤 높이 제한 */
+  overflow-y: auto; /* 카드 내부에 스크롤 활성화 */
+  width: 100%;
+  text-align: left;
+  padding: 0 5px;
+}
+
+.card-names2 ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.card-names2 li {
+  margin-bottom: 5px;
+  font-size: 0.9em;
+  color: #555;
+}
+
+.card-chart {
+  width: 100%;
+  max-height: 120px;
+  margin-top: 15px;
+}
+
+.card-chart canvas {
+  max-width: 100%;
+}
