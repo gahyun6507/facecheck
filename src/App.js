@@ -3,10 +3,11 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Sidebar from './components/Sidebar';
 import Header from './components/Header';
 import Dashboard from './components/Dashboard';
-import Overview from './components/Overview'; // Overview 컴포넌트 임포트
+import Overview from './components/Overview';
 import SystemLogChart from './components/SystemLogChart';
 import Calendar from './components/Calendar';
 import DataTable from './components/DataTable';
+import Login from './components/login'; // Login 컴포넌트 임포트
 import './App.css';
 
 function App() {
@@ -32,6 +33,9 @@ function App() {
 
               {/* 출결기록 경로 */}
               <Route path="/attendance-records" element={<DataTable />} />
+
+              {/* 로그인 경로 */}
+              <Route path="/login" element={<Login />} /> {/* 로그인 페이지 추가 */}
             </Routes>
           </div>
         </div>
