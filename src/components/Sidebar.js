@@ -1,6 +1,6 @@
 import React from 'react';
-import { MdDashboard, MdPerson, MdSettings, MdLogout } from 'react-icons/md';
-import { Link } from 'react-router-dom'; // Link를 가져옵니다.
+import { MdDashboard, MdPerson, MdSettings, MdLogout, MdCameraAlt } from 'react-icons/md';
+import { NavLink } from 'react-router-dom'; // Link 대신 NavLink 사용
 import '../styles/Sidebar.css';
 
 function Sidebar() {
@@ -8,15 +8,18 @@ function Sidebar() {
     <div className="sidebar">
       <h2>
         <li>
-          <Link to="/"><MdLogout /> 출첵FACE</Link>
-        </li> {/* 메인 페이지로 이동하는 링크 추가 */}
+          <NavLink to="/" className='snapcheck-title'><MdLogout /> SnapCheck</NavLink>
+        </li>
       </h2>
       <ul>
         <li>
-          <Link to="/dashboard"><MdDashboard /> 대시보드</Link>
+          <NavLink to="/dashboard" activeClassName="active"><MdDashboard /> 대시보드</NavLink>
         </li>
         <li>
-          <Link to="/attendance-records"><MdLogout /> 출결기록</Link>
+          <NavLink to="/attendance-records" activeClassName="active"><MdLogout /> 출결기록</NavLink>
+        </li>
+        <li>
+          <NavLink to="/webcam" activeClassName="active"><MdCameraAlt /> 출석체크</NavLink>
         </li>
       </ul>
     </div>

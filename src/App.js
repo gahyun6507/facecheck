@@ -7,7 +7,8 @@ import Overview from './components/Overview';
 import SystemLogChart from './components/SystemLogChart';
 import Calendar from './components/Calendar';
 import DataTable from './components/DataTable';
-import Login from './components/login'; // Login 컴포넌트 임포트
+import Login from './components/login';
+import WebCam from './components/WebCam';
 import './App.css';
 
 function App() {
@@ -36,7 +37,10 @@ function App() {
 
               {/* 로그인 경로 */}
               <Route path="/login" element={<Login />} /> {/* 로그인 페이지 추가 */}
-            </Routes>
+
+              {/* 출석체크 경로 */}
+              <Route path="/webcam" element={<WebCam />} />
+              </Routes>
           </div>
         </div>
       </div>

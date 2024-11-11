@@ -1,10 +1,24 @@
 .app {
   display: flex;
-  height: 100vh;
+  height: 100vh; /* 화면 전체 높이를 차지 */
+  overflow: hidden; /* 넘치는 콘텐츠를 숨김 */
 }
 
 .main-content {
-  flex: 1;
-  background-color: #f4f7fa;
+  flex-grow: 1;
+  overflow-y: auto; /* 세로 스크롤만 허용, 가로 스크롤 방지 */
+  padding: 20px;
+}
+
+.sidebar {
+  width: 220px;
+  height: 100vh; /* 뷰포트 전체 높이와 맞춤 */
+  position: fixed;
+  overflow-y: auto; /* 사이드바 내에서 세로 스크롤 허용 */
+}
+
+.content-area {
+  height: calc(100vh - 60px); /* 헤더 높이를 제외한 높이 설정 (헤더 높이값에 따라 조정) */
+  overflow-y: auto; /* 필요시 세로 스크롤 허용 */
   padding: 20px;
 }
