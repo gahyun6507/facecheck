@@ -1,6 +1,6 @@
 import React from 'react';
 import { MdDashboard, MdPerson, MdSettings, MdLogout, MdCameraAlt } from 'react-icons/md';
-import { NavLink } from 'react-router-dom'; // Link 대신 NavLink 사용
+import { NavLink } from 'react-router-dom'; // NavLink로 교체
 import '../styles/Sidebar.css';
 
 function Sidebar() {

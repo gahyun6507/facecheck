@@ -14,6 +14,9 @@ const WebcamComponent = () => {
   };
 
   const handleCapture = async () => {
+    // 버튼 클릭 시 상태 초기화
+    setUploadStatus("");
+
     if (webcamRef.current) {
       const imageSrc = webcamRef.current.getScreenshot();
       if (!imageSrc) {
@@ -22,7 +25,6 @@ const WebcamComponent = () => {
       }
 
       const base64Image = imageSrc.split(',')[1];
-
       const data = {
         filename: "attendance_image.png",
         image_binary: base64Image,
