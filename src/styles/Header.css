@@ -1,3 +1,4 @@
+/* 헤더 스타일 */
 .header {
   display: flex;
   justify-content: space-between;
@@ -6,8 +7,12 @@
   background-color: #ffffff;
   border-bottom: 1px solid #e0e0e0;
   position: relative;
+  margin-left: 30px;        /* 사이드바 너비만큼 여백 */
+  width: calc(100% - 100px); /* 사이드바 너비를 제외한 나머지 공간만 차지 */
+  z-index: 10;               /* 다른 요소들 위로 오도록 설정 */
 }
 
+/* 검색창 및 드롭다운 */
 .search-container {
   position: relative;
 }
@@ -21,7 +26,7 @@
 
 .search-dropdown {
   position: absolute;
-  top: 40px;
+  top: 40px; /* 드롭다운이 서치 바 아래로 표시되도록 */
   left: 0;
   width: 100%;
   background-color: #ffffff;
@@ -43,6 +48,7 @@
   background-color: #f0f0f0;
 }
 
+/* 아이콘 스타일 */
 .icons {
   display: flex;
   gap: 10px;
@@ -53,9 +59,10 @@
   font-size: 1.5em;
 }
 
+/* 프로필 드롭다운 */
 .profile-dropdown {
   position: absolute;
-  top: 50px;
+  top: 50px; /* 드롭다운 위치 조정 */
   right: 0;
   background-color: #ffffff;
   border: 1px solid #e0e0e0;
@@ -83,6 +90,7 @@
   font-weight: bold;
 }
 
+/* 프로필 버튼 */
 .profile-btn {
   width: 100%;
   padding: 8px 0;
@@ -100,3 +108,15 @@
   background-color: #154269;
 }
 
+/* 본문 콘텐츠 영역 (헤더 고정으로 여백 추가) */
+.main-content {
+  padding: 20px;
+  margin-left: 240px; /* 사이드바 너비만큼 여백을 추가하여 본문과 사이드바가 겹치지 않도록 설정 */
+}
+
+/* 사이드바 스타일 */
+.sidebar {
+  width: 240px;    /* 사이드바의 너비 */
+  height: 100vh;   /* 화면 높이 전체를 차지 */
+  overflow-y: auto; /* 사이드바 내에서 세로 스크롤 허용 */
+}

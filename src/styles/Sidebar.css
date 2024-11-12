@@ -22,6 +22,7 @@
   align-items: center; /* 세로 정렬 */
   padding: 10px 0; /* 패딩 */
   font-size: 1.1em; /* 텍스트 크기 */
+  margin-bottom: 10px; /* 아래쪽 여백 */
 }
 
 .sidebar li a {
@@ -29,11 +30,24 @@
   text-decoration: none; /* 밑줄 제거 */
   display: flex; /* flexbox 사용 */
   align-items: center; /* 세로 정렬 */
+  padding: 10px 15px; /* 링크 패딩 */
+  transition: background-color 0.3s, color 0.3s; /* 호버 전환 효과 */
+  border-radius: 5px; /* 링크의 모서리 반경 */
 }
 
+/* 호버 효과 */
 .sidebar li a:hover {
   background-color: rgba(255, 255, 255, 0.1); /* 호버 시 배경색 */
+  color: #f1c40f; /* 호버 시 텍스트 색상 */
 }
+
+/* 활성화된 (현재 페이지) 링크 스타일 */
+.sidebar li a.active {
+  font-weight: bold; /* 활성화된 링크는 굵게 */
+  color: #f1c40f; /* 활성화 시 텍스트 색상 */
+  border-radius: 5px; /* 모서리 둥글게 */
+}
+
 
 .sidebar li svg {
   margin-right: 10px; /* 아이콘과 텍스트 사이 여백 */

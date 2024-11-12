@@ -1,0 +1,64 @@
+.webcam-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    overflow: hidden;
+    transform: translateY(-50px); /* 필요시 위치 조정 */
+}
+
+/* Webcam 박스 */
+.webcam-box {
+    width: 100%;
+    max-width: 720px; /* 최대 너비 설정 */
+    aspect-ratio: 4 / 3; /* 웹캠의 가로세로 비율 */
+    position: relative;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    border: 1px solid #e0e0e0;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+
+/* 웹캠 스타일 */
+.webcam {
+    border-radius: 16px; /* 부드러운 모서리 */
+    width: 100%;
+    height: auto;
+}
+
+/* 제목 스타일 */
+.webcam-title {
+    color: #333333;
+    font-weight: 700;
+    font-size: 1.8em;
+    text-align: center;
+    margin-bottom: 20px;
+    text-transform: uppercase; /* 대문자 */
+    letter-spacing: 1px; /* 간격 */
+}
+
+/* 버튼 스타일 */
+.webcam-toggle-button {
+    margin-top: 20px;
+    padding: 12px 30px;
+    font-size: 1.1em;
+    font-weight: 600;
+    color: #ffffff;
+    background-color: #4a90e2; /* 파란색 배경 */
+    border: none;
+    border-radius: 50px; /* 둥근 버튼 */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* 호버 효과 */
+}
+
+.webcam-toggle-button:hover {
+    background-color: #357ABD; /* 조금 더 어두운 파란색 */
+    transform: scale(1.05); /* 살짝 확대 */
+}
+
+/* 웹캠이 켜졌을 때 버튼 위치 아래로 */
+.webcam-toggle-button.below {
+    margin-top: 30px;
+}
