@@ -6,10 +6,11 @@
   padding: 10px 20px;
   background-color: #ffffff;
   border-bottom: 1px solid #e0e0e0;
-  position: relative;
+  position: relative; /* z-index가 제대로 작동하도록 위치를 상대적으로 설정 */
   margin-left: 30px;        /* 사이드바 너비만큼 여백 */
   width: calc(100% - 100px); /* 사이드바 너비를 제외한 나머지 공간만 차지 */
-  z-index: 10;               /* 다른 요소들 위로 오도록 설정 */
+  z-index: 999;             /* header의 z-index 값을 높여줌 */
+  overflow: visible;        /* header에서 overflow가 잘리거나 숨겨지지 않도록 */
 }
 
 /* 검색창 및 드롭다운 */
@@ -33,7 +34,7 @@
   border: 1px solid #e0e0e0;
   border-radius: 4px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-  z-index: 50;
+  z-index: 9999;  /* 다른 드롭다운이나 요소들보다 앞에 표시되도록 */
 }
 
 .search-dropdown p {
@@ -70,7 +71,8 @@
   width: 180px;
   padding: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-  z-index: 100;
+  z-index: 9999; /* 다른 모든 요소들 위로 표시되도록 z-index 높이기 */
+  overflow: visible; /* 드롭다운이 잘리지 않도록 overflow를 visible로 설정 */
 }
 
 .profile-info {
@@ -95,7 +97,7 @@
   width: 100%;
   padding: 8px 0;
   background-color: #1e3a5f;
-  color: #ffffff;
+  color: white;
   border: none;
   border-radius: 4px;
   cursor: pointer;

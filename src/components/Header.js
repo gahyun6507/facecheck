@@ -1,13 +1,14 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';  // useNavigate 훅 추가
+import { useNavigate, useLocation } from 'react-router-dom';
 import '../styles/Header.css';
 
-function Header() {
+function Header({ setSelectedSubject }) {
   const [isProfileOpen, setIsProfileOpen] = useState(false);
   const [isSearchFocused, setIsSearchFocused] = useState(false);
   const profileRef = useRef(null);
   const searchRef = useRef(null);
-  const navigate = useNavigate();  // useNavigate 훅 사용
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const handleClickOutside = (e) => {
     if (profileRef.current && !profileRef.current.contains(e.target)) {
@@ -18,13 +19,25 @@ function Header() {
     }
   };
 
+  const handleSubjectSelect = async (subject) => {
+    if (subject === '전체' && location.pathname === '/attendance-records') {
+      setSelectedSubject('');  // 수정된 부분: setSelectedSubject 사용
+    } else {
+      setSelectedSubject(subject);  // 수정된 부분: setSelectedSubject 사용
+    }
+
+    if (setSelectedSubject) {
+      setSelectedSubject(subject === '전체' && location.pathname === '/attendance-records' ? '' : subject);
+    }
+  };
+
   useEffect(() => {
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
-
+  
   const handleLoginClick = () => {
-    navigate('/login');  // 로그인 버튼 클릭 시 '/login' 경로로 이동
+    navigate('/login');
   };
 
   return (
@@ -38,13 +51,17 @@ function Header() {
         />
         {isSearchFocused && (
           <div className="search-dropdown">
-            <p>크로스플랫폼</p>
-            <p>캡스톤</p>
-            <p>쿠버네티스</p>
+            {location.pathname === '/attendance-records' && (
+              <p onClick={() => handleSubjectSelect('전체')}>전체</p>
+            )}
+            <p onClick={() => handleSubjectSelect('크로스플랫폼')}>크로스플랫폼</p>
+            <p onClick={() => handleSubjectSelect('캡스톤')}>캡스톤</p>
+            <p onClick={() => handleSubjectSelect('쿠버네티스')}>쿠버네티스</p>
           </div>
         )}
       </div>
       <div className="icons">
+        <span className="icon">🔔</span>
         <span className="icon" onClick={() => setIsProfileOpen(!isProfileOpen)}>👤</span>
       </div>
       {isProfileOpen && (
